@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+.node {}
+
+        .link { stroke: #999; stroke-opacity: .6; stroke-width: 1px; }
+		text {
+  font-family: sans-serif;
+  font-size: 10px;
+}
+hr {
+    height: 1px;
+    color: #123455;
+    background-color: #123455;
+    border: none;
+}
+</style>
+</head>
+<body style="background-color:#EAEDED">
+   
+<div class="container">
+  <h1>Risk Analysis of Computer Industry Companies in Taiwan</h1>
+  <p>Please select a company below.</p>                                        
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a company
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">Upstream<span class="caret"></a>
+	    <ul class="dropdown-menu">
+          <li class="dropdown-submenu"><a class="test" href="#">CPU<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a class="comp" href="#">威盛</a></li>
+			  <li><a class="comp" href="#">鑫聯大投控</a></li>
+			  <li><a class="comp" href="#">擎亞</a></li>
+			  <li><a class="comp" href="#">超微半導體</a></li>
+			  <li><a class="comp" href="#">國際商業機器</a></li>
+			  <li><a class="comp" href="#">英特爾</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Chipset<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">威盛</a></li>
+			<li><a class="comp" href="#">豐藝</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">旺玖</a></li>
+			<li><a class="comp" href="#">超微半導體</a></li>
+			<li><a class="comp" href="#">英特爾</a></li>
+			<li><a class="comp" href="#">輝達</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Panel<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">全台</a></li>
+			<li><a class="comp" href="#">豐藝</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">光聯</a></li>
+			<li><a class="comp" href="#">久正</a></li>
+			<li><a class="comp" href="#">京東方</a></li>
+			<li><a class="comp" href="#">樂金顯示</a></li>
+			<li><a class="comp" href="#">三星</a></li>
+			<li><a class="comp" href="#">三星顯示</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Display Module<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">憶聲</a></li>
+			<li><a class="comp" href="#">全台</a></li>
+			<li><a class="comp" href="#">豐藝</a></li>
+			<li><a class="comp" href="#">亞帝歐</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">光聯</a></li>
+			<li><a class="comp" href="#">青雲</a></li>
+			<li><a class="comp" href="#">久正</a></li>
+			<li><a class="comp" href="#">京東方</a></li>
+			<li><a class="comp" href="#">樂金顯示</a></li>
+			<li><a class="comp" href="#">三星</a></li>
+			<li><a class="comp" href="#">三星顯示</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">RAM<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">華邦電</a></li>
+			<li><a class="comp" href="#">創見</a></li>
+			<li><a class="comp" href="#">十銓</a></li>
+			<li><a class="comp" href="#">華東</a></li>
+			<li><a class="comp" href="#">宇瞻</a></li>
+			<li><a class="comp" href="#">威剛</a></li>
+			<li><a class="comp" href="#">駿熠電</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">廣穎</a></li>
+			<li><a class="comp" href="#">青雲</a></li>
+			<li><a class="comp" href="#">安鈦克</a></li>
+			<li><a class="comp" href="#">品安</a></li>
+			<li><a class="comp" href="#">商丞</a></li>
+			<li><a class="comp" href="#">英格爾</a></li>
+			<li><a class="comp" href="#">群聯</a></li>
+			<li><a class="comp" href="#">金士頓</a></li>
+			<li><a class="comp" href="#">美光</a></li>
+			<li><a class="comp" href="#">記憶</a></li>
+			<li><a class="comp" href="#">三星電子</a></li>
+			<li><a class="comp" href="#">SK海力士</a></li>
+			<li><a class="comp" href="#">Smart Modular Technologies</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Motherboard<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">金寶</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">精英</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">技嘉</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">威盛</a></li>
+			<li><a class="comp" href="#">映泰</a></li>
+			<li><a class="comp" href="#">承啟</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">威強電</a></li>
+			<li><a class="comp" href="#">華擎</a></li>
+			<li><a class="comp" href="#">和碩</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">青雲</a></li>
+			<li><a class="comp" href="#">捷波</a></li>
+			<li><a class="comp" href="#">立端</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Case<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">首利</a></li>
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">鴻準</a></li>
+			<li><a class="comp" href="#">承啟</a></li>
+			<li><a class="comp" href="#">可成</a></li>
+			<li><a class="comp" href="#">神基</a></li>
+			<li><a class="comp" href="#">晟銘電</a></li>
+			<li><a class="comp" href="#">偉訓</a></li>
+			<li><a class="comp" href="#">柏騰</a></li>
+			<li><a class="comp" href="#">谷崧</a></li>
+			<li><a class="comp" href="#">事欣科</a></li>
+			<li><a class="comp" href="#">和碩</a></li>
+			<li><a class="comp" href="#">迎廣</a></li>
+			<li><a class="comp" href="#">勤誠</a></li>
+			<li><a class="comp" href="#">鎧勝-KY</a></li>
+			<li><a class="comp" href="#">濱川</a></li>
+			<li><a class="comp" href="#">及成</a></li>
+			<li><a class="comp" href="#">錦明</a></li>
+			<li><a class="comp" href="#">英濟</a></li>
+			<li><a class="comp" href="#">旭品</a></li>
+			<li><a class="comp" href="#">曜越</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">應華</a></li>
+			<li><a class="comp" href="#">富驊</a></li>
+			<li><a class="comp" href="#">安鈦克</a></li>
+			<li><a class="comp" href="#">森田</a></li>
+			<li><a class="comp" href="#">南俊國際</a></li>
+			<li><a class="comp" href="#">比亞迪</a></li>
+			<li><a class="comp" href="#">富智康</a></li>
+			<li><a class="comp" href="#">捷普</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Power Supply Unit<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">首利</a></li>
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">致茂</a></li>
+			<li><a class="comp" href="#">群光</a></li>
+			<li><a class="comp" href="#">環科</a></li>
+			<li><a class="comp" href="#">新巨</a></li>
+			<li><a class="comp" href="#">承啟</a></li>
+			<li><a class="comp" href="#">聯昌</a></li>
+			<li><a class="comp" href="#">飛宏</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">全漢</a></li>
+			<li><a class="comp" href="#">偉訓</a></li>
+			<li><a class="comp" href="#">聯德</a></li>
+			<li><a class="comp" href="#">迎廣</a></li>
+			<li><a class="comp" href="#">康舒</a></li>
+			<li><a class="comp" href="#">群電</a></li>
+			<li><a class="comp" href="#">僑威</a></li>
+			<li><a class="comp" href="#">旭品</a></li>
+			<li><a class="comp" href="#">幸康</a></li>
+			<li><a class="comp" href="#">曜越</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">亞元</a></li>
+			<li><a class="comp" href="#">海韻電</a></li>
+			<li><a class="comp" href="#">岳豐</a></li>
+			<li><a class="comp" href="#">安鈦克</a></li>
+			<li><a class="comp" href="#">保銳</a></li>
+			<li><a class="comp" href="#">帝聞</a></li>
+			<li><a class="comp" href="#">Eaton Corporation Plc</a></li>
+			<li><a class="comp" href="#">艾默生電氣公司</a></li>
+			<li><a class="comp" href="#">施耐德電機公司</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Network Interface Controller<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">互億</a></li>
+			<li><a class="comp" href="#">亞信</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">振曜</a></li>
+			<li><a class="comp" href="#">深圳普聯技術</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Battery<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">禾伸堂</a></li>
+			<li><a class="comp" href="#">順達</a></li>
+			<li><a class="comp" href="#">加百裕</a></li>
+			<li><a class="comp" href="#">西勝</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">新盛力</a></li>
+			<li><a class="comp" href="#">新普</a></li>
+			<li><a class="comp" href="#">樂金化學</a></li>
+			<li><a class="comp" href="#">松下電器</a></li>
+			<li><a class="comp" href="#">Samsung SDI</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Thermal Module<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">鴻準</a></li>
+			<li><a class="comp" href="#">建準</a></li>
+			<li><a class="comp" href="#">奇鋐</a></li>
+			<li><a class="comp" href="#">泰碩</a></li>
+			<li><a class="comp" href="#">超眾</a></li>
+			<li><a class="comp" href="#">聯德控股-KY</a></li>
+			<li><a class="comp" href="#">動力-KY</a></li>
+			<li><a class="comp" href="#">協禧</a></li>
+			<li><a class="comp" href="#">雙鴻</a></li>
+			<li><a class="comp" href="#">力致</a></li>
+			<li><a class="comp" href="#">皇龍</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">業強</a></li>
+			<li><a class="comp" href="#">元山</a></li>
+			<li><a class="comp" href="#">安鈦克</a></li>
+			<li><a class="comp" href="#">華宏</a></li>
+			<li><a class="comp" href="#">安力-KY</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Interface Card<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">互億</a></li>
+			<li><a class="comp" href="#">東碩</a></li>
+			<li><a class="comp" href="#">泓格</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">寶島科</a></li>
+			<li><a class="comp" href="#">美商安邁</a></li>
+			<li><a class="comp" href="#">Phoenix</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Graphics Card<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">技嘉</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">圓剛</a></li>
+			<li><a class="comp" href="#">承啟</a></li>
+			<li><a class="comp" href="#">麗臺</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">青雲</a></li>
+			<li><a class="comp" href="#">撼訊</a></li>
+			<li><a class="comp" href="#">捷波</a></li>
+			<li><a class="comp" href="#">七彩虹集团</a></li>
+			<li><a class="comp" href="#">EVGA</a></li>
+			<li><a class="comp" href="#">柏能集團</a></li>
+			<li><a class="comp" href="#">蓝宝科技</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Hard Disk Drive<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">金寶</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">優群</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">昆腾</a></li>
+			<li><a class="comp" href="#">希捷科技</a></li>
+			<li><a class="comp" href="#">威騰電子</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Optical Disk Drive<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">日立樂金</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Disk Storage System<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">普安</a></li>
+			<li><a class="comp" href="#">喬鼎</a></li>
+			<li><a class="comp" href="#">昇銳</a></li>
+			<li><a class="comp" href="#">營邦</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">EMC</a></li>
+			<li><a class="comp" href="#">日立數據系統</a></li>
+			<li><a class="comp" href="#">惠普</a></li>
+			<li><a class="comp" href="#">NetApp</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">BIOS<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">系微</a></li>
+			<li><a class="comp" href="#">美商安邁</a></li>
+			<li><a class="comp" href="#">Phoenix</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">USB Flash Drive<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">創見</a></li>
+			<li><a class="comp" href="#">增你強</a></li>
+			<li><a class="comp" href="#">十銓</a></li>
+			<li><a class="comp" href="#">互億</a></li>
+			<li><a class="comp" href="#">宇瞻</a></li>
+			<li><a class="comp" href="#">威剛</a></li>
+			<li><a class="comp" href="#">東碩</a></li>
+			<li><a class="comp" href="#">建舜電</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">廣穎</a></li>
+			<li><a class="comp" href="#">品安</a></li>
+			<li><a class="comp" href="#">群聯</a></li>
+			<li><a class="comp" href="#">立達</a></li>
+			<li><a class="comp" href="#">三星電子</a></li>
+			<li><a class="comp" href="#">新帝公司</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Video Card<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">圓剛</a></li>
+			<li><a class="comp" href="#">東碩</a></li>
+			<li><a class="comp" href="#">廣寰科</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">聰泰</a></li>
+			<li><a class="comp" href="#">EVGA</a></li>
+			<li><a class="comp" href="#">邁創</a></li>
+			<li><a class="comp" href="#">VisionTek</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Camera Lens<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">佳能</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">大立光</a></li>
+			<li><a class="comp" href="#">亞光</a></li>
+			<li><a class="comp" href="#">華晶科</a></li>
+			<li><a class="comp" href="#">玉晶光</a></li>
+			<li><a class="comp" href="#">揚明光</a></li>
+			<li><a class="comp" href="#">佳凌</a></li>
+			<li><a class="comp" href="#">今國光</a></li>
+			<li><a class="comp" href="#">中揚光</a></li>
+			<li><a class="comp" href="#">先進光</a></li>
+			<li><a class="comp" href="#">聯一光</a></li>
+			<li><a class="comp" href="#">新鉅科</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">景傳</a></li>
+			<li><a class="comp" href="#">龍翩</a></li>
+			<li><a class="comp" href="#">久禾光</a></li>
+			<li><a class="comp" href="#">蔡司</a></li>
+			<li><a class="comp" href="#">豪雅</a></li>
+			<li><a class="comp" href="#">康達智</a></li>
+			<li><a class="comp" href="#">舜宇光學</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Optical Disk<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">錸德</a></li>
+			<li><a class="comp" href="#">吉祥全</a></li>
+			<li><a class="comp" href="#">鈺德</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">華鎂鑫</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Cables<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">廣宇</a></li>
+			<li><a class="comp" href="#">正崴</a></li>
+			<li><a class="comp" href="#">太空梭</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">今皓</a></li>
+			<li><a class="comp" href="#">信邦</a></li>
+			<li><a class="comp" href="#">聯穎</a></li>
+			<li><a class="comp" href="#">鎰勝</a></li>
+			<li><a class="comp" href="#">詮欣</a></li>
+			<li><a class="comp" href="#">瀚荃</a></li>
+			<li><a class="comp" href="#">貿聯-KY</a></li>
+			<li><a class="comp" href="#">鴻碩</a></li>
+			<li><a class="comp" href="#">好德</a></li>
+			<li><a class="comp" href="#">樺晟</a></li>
+			<li><a class="comp" href="#">東碩</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">松普</a></li>
+			<li><a class="comp" href="#">萬旭</a></li>
+			<li><a class="comp" href="#">岳豐</a></li>
+			<li><a class="comp" href="#">詠昇</a></li>
+			<li><a class="comp" href="#">安費諾</a></li>
+			<li><a class="comp" href="#">莫仕</a></li>
+			<li><a class="comp" href="#">TE Connectivity</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Hinge<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">信錦</a></li>
+			<li><a class="comp" href="#">新日興</a></li>
+			<li><a class="comp" href="#">鑫禾</a></li>
+			<li><a class="comp" href="#">錦明</a></li>
+			<li><a class="comp" href="#">兆利</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">連鋐科技</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Metal and Plastic Module<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">信錦</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">鴻準</a></li>
+			<li><a class="comp" href="#">敦吉</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">新至陞</a></li>
+			<li><a class="comp" href="#">詮欣</a></li>
+			<li><a class="comp" href="#">台翰</a></li>
+			<li><a class="comp" href="#">和勤</a></li>
+			<li><a class="comp" href="#">及成</a></li>
+			<li><a class="comp" href="#">英濟</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">同協</a></li>
+			<li><a class="comp" href="#">欣厚-KY</a></li>
+			<li><a class="comp" href="#">安力-KY</a></li>
+			<li><a class="comp" href="#">富智康</a></li>
+			<li><a class="comp" href="#">捷普</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Other Components<span class="caret"></span></a>
+		    <ul class="dropdown-menu">
+			<li><a class="comp" href="#">廣隆</a></li>
+			<li><a class="comp" href="#">川湖</a></li>
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">廣宇</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">廣達</a></li>
+			<li><a class="comp" href="#">群光</a></li>
+			<li><a class="comp" href="#">精元</a></li>
+			<li><a class="comp" href="#">正崴</a></li>
+			<li><a class="comp" href="#">圓剛</a></li>
+			<li><a class="comp" href="#">新巨</a></li>
+			<li><a class="comp" href="#">美律</a></li>
+			<li><a class="comp" href="#">兆勁</a></li>
+			<li><a class="comp" href="#">義隆</a></li>
+			<li><a class="comp" href="#">敦吉</a></li>
+			<li><a class="comp" href="#">志聖</a></li>
+			<li><a class="comp" href="#">大毅</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">華立</a></li>
+			<li><a class="comp" href="#">威強電</a></li>
+			<li><a class="comp" href="#">憶聲</a></li>
+			<li><a class="comp" href="#">禾伸堂</a></li>
+			<li><a class="comp" href="#">建碁</a></li>
+			<li><a class="comp" href="#">立德</a></li>
+			<li><a class="comp" href="#">銘異</a></li>
+			<li><a class="comp" href="#">勝德</a></li>
+			<li><a class="comp" href="#">泰碩</a></li>
+			<li><a class="comp" href="#">力銘</a></li>
+			<li><a class="comp" href="#">新至陞</a></li>
+			<li><a class="comp" href="#">大眾控</a></li>
+			<li><a class="comp" href="#">致伸</a></li>
+			<li><a class="comp" href="#">虹堡</a></li>
+			<li><a class="comp" href="#">上福</a></li>
+			<li><a class="comp" href="#">聚鼎</a></li>
+			<li><a class="comp" href="#">旭隼</a></li>
+			<li><a class="comp" href="#">達方</a></li>
+			<li><a class="comp" href="#">菱光</a></li>
+			<li><a class="comp" href="#">貿聯-KY</a></li>
+			<li><a class="comp" href="#">茂林-KY</a></li>
+			<li><a class="comp" href="#">科嘉-KY</a></li>
+			<li><a class="comp" href="#">濱川</a></li>
+			<li><a class="comp" href="#">和勤</a></li>
+			<li><a class="comp" href="#">好德</a></li>
+			<li><a class="comp" href="#">大綜</a></li>
+			<li><a class="comp" href="#">和進</a></li>
+			<li><a class="comp" href="#">東浦</a></li>
+			<li><a class="comp" href="#">崧騰</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">寶聯通</a></li>
+			<li><a class="comp" href="#">聰泰</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">群聯</a></li>
+			<li><a class="comp" href="#">欣厚-KY</a></li>
+			<li><a class="comp" href="#">安力-KY</a></li>
+			<li><a class="comp" href="#">大拓-KY</a></li>
+			<li><a class="comp" href="#">沅聖</a></li>
+			<li><a class="comp" href="#">和詮</a></li>
+			<li><a class="comp" href="#">秀育</a></li>
+			<li><a class="comp" href="#">安普新</a></li>
+			</ul>
+		  </li>
+          
+	    </ul>
+	  </li>
+	  <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">Downstream<span class="caret"></a>
+	    <ul class="dropdown-menu">
+          <li class="dropdown-submenu"><a class="test" href="#">Laptop<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">仁寶</a></li>
+			<li><a class="comp" href="#">精英</a></li>
+			<li><a class="comp" href="#">宏碁</a></li>
+			<li><a class="comp" href="#">英業達</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">藍天</a></li>
+			<li><a class="comp" href="#">倫飛</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">廣達</a></li>
+			<li><a class="comp" href="#">浩鑫</a></li>
+			<li><a class="comp" href="#">燦坤</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">神基</a></li>
+			<li><a class="comp" href="#">緯創</a></li>
+			<li><a class="comp" href="#">和碩</a></li>
+			<li><a class="comp" href="#">聚碩</a></li>
+			<li><a class="comp" href="#">茂訊</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">大世科</a></li>
+			<li><a class="comp" href="#">戴爾</a></li>
+			<li><a class="comp" href="#">惠普</a></li>
+			<li><a class="comp" href="#">聯想</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Desktop<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">精英</a></li>
+			<li><a class="comp" href="#">宏碁</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">浩鑫</a></li>
+			<li><a class="comp" href="#">燦坤</a></li>
+			<li><a class="comp" href="#">緯創</a></li>
+			<li><a class="comp" href="#">和碩</a></li>
+			<li><a class="comp" href="#">聚碩</a></li>
+			<li><a class="comp" href="#">茂訊</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">大世科</a></li>
+			<li><a class="comp" href="#">戴爾</a></li>
+			<li><a class="comp" href="#">惠普</a></li>
+			<li><a class="comp" href="#">聯想</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Industrial Computer<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">台苯</a></li>
+			<li><a class="comp" href="#">倫飛</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">研華</a></li>
+			<li><a class="comp" href="#">友通</a></li>
+			<li><a class="comp" href="#">浩鑫</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">歐格</a></li>
+			<li><a class="comp" href="#">威強電</a></li>
+			<li><a class="comp" href="#">融程電</a></li>
+			<li><a class="comp" href="#">大眾控</a></li>
+			<li><a class="comp" href="#">事欣科</a></li>
+			<li><a class="comp" href="#">凌華</a></li>
+			<li><a class="comp" href="#">飛捷</a></li>
+			<li><a class="comp" href="#">樺漢</a></li>
+			<li><a class="comp" href="#">晶心科</a></li>
+			<li><a class="comp" href="#">艾訊</a></li>
+			<li><a class="comp" href="#">茂訊</a></li>
+			<li><a class="comp" href="#">哲固</a></li>
+			<li><a class="comp" href="#">安勤</a></li>
+			<li><a class="comp" href="#">鴻翊</a></li>
+			<li><a class="comp" href="#">泓格</a></li>
+			<li><a class="comp" href="#">磐儀</a></li>
+			<li><a class="comp" href="#">精聯</a></li>
+			<li><a class="comp" href="#">營邦</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">台林</a></li>
+			<li><a class="comp" href="#">同亨</a></li>
+			<li><a class="comp" href="#">振曜</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">欣技</a></li>
+			<li><a class="comp" href="#">立端</a></li>
+			<li><a class="comp" href="#">廣錠</a></li>
+			<li><a class="comp" href="#">維田</a></li>
+			<li><a class="comp" href="#">鑫創電子</a></li>
+			<li><a class="comp" href="#">廣積</a></li>
+			<li><a class="comp" href="#">伍豐</a></li>
+			<li><a class="comp" href="#">新漢</a></li>
+			<li><a class="comp" href="#">拍檔</a></li>
+			<li><a class="comp" href="#">Kontron</a></li>
+			<li><a class="comp" href="#">安迅資訊系統</a></li>
+			<li><a class="comp" href="#">Radiant</a></li>
+			<li><a class="comp" href="#">Radysis</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Thin Client<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">倫飛</a></li>
+			<li><a class="comp" href="#">鼎元</a></li>
+			<li><a class="comp" href="#">燦坤</a></li>
+			<li><a class="comp" href="#">麗臺</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">聚碩</a></li>
+			<li><a class="comp" href="#">茂訊</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">公信</a></li>
+			<li><a class="comp" href="#">戴爾</a></li>
+			<li><a class="comp" href="#">惠普</a></li>
+			<li><a class="comp" href="#">聯想</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Server<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">宏碁</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">技嘉</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">燦坤</a></li>
+			<li><a class="comp" href="#">神達</a></li>
+			<li><a class="comp" href="#">聚碩</a></li>
+			<li><a class="comp" href="#">緯穎</a></li>
+			<li><a class="comp" href="#">大綜</a></li>
+			<li><a class="comp" href="#">營邦</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">豪勉</a></li>
+			<li><a class="comp" href="#">晉泰</a></li>
+			<li><a class="comp" href="#">大世科</a></li>
+			<li><a class="comp" href="#">戴爾</a></li>
+			<li><a class="comp" href="#">惠普</a></li>
+			<li><a class="comp" href="#">國際商業機器</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Printer<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">光寶科</a></li>
+			<li><a class="comp" href="#">全友</a></li>
+			<li><a class="comp" href="#">金寶</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">佳世達</a></li>
+			<li><a class="comp" href="#">宏碁</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">虹光</a></li>
+			<li><a class="comp" href="#">燦坤</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">亞光</a></li>
+			<li><a class="comp" href="#">致伸</a></li>
+			<li><a class="comp" href="#">天瀚</a></li>
+			<li><a class="comp" href="#">鼎翰</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">亞泰</a></li>
+			<li><a class="comp" href="#">科誠</a></li>
+			<li><a class="comp" href="#">協益</a></li>
+			<li><a class="comp" href="#">中光電</a></li>
+			<li><a class="comp" href="#">東友</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">全譜</a></li>
+			<li><a class="comp" href="#">能率網通</a></li>
+			<li><a class="comp" href="#">Canon</a></li>
+			<li><a class="comp" href="#">精工愛普生</a></li>
+			<li><a class="comp" href="#">惠普</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Surveillance System<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">士電</a></li>
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">圓剛</a></li>
+			<li><a class="comp" href="#">隴華</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">歐格</a></li>
+			<li><a class="comp" href="#">喬鼎</a></li>
+			<li><a class="comp" href="#">奇偶</a></li>
+			<li><a class="comp" href="#">晶睿</a></li>
+			<li><a class="comp" href="#">圓展</a></li>
+			<li><a class="comp" href="#">慧友</a></li>
+			<li><a class="comp" href="#">鈞泰</a></li>
+			<li><a class="comp" href="#">昇銳</a></li>
+			<li><a class="comp" href="#">杭特</a></li>
+			<li><a class="comp" href="#">哲固</a></li>
+			<li><a class="comp" href="#">駿熠電</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">天鉞電</a></li>
+			<li><a class="comp" href="#">聰泰</a></li>
+			<li><a class="comp" href="#">彩富</a></li>
+			<li><a class="comp" href="#">順發</a></li>
+			<li><a class="comp" href="#">豪勉</a></li>
+			<li><a class="comp" href="#">京晨科</a></li>
+			<li><a class="comp" href="#">勝品</a></li>
+			<li><a class="comp" href="#">欣普羅</a></li>
+			<li><a class="comp" href="#">建騰</a></li>
+			<li><a class="comp" href="#">勞勃·博世公司</a></li>
+			<li><a class="comp" href="#">漢威聯合</a></li>
+			<li><a class="comp" href="#">賽峰</a></li>
+			</ul>
+		  </li>
+		  <li class="dropdown-submenu"><a class="test" href="#">Other Products<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a class="comp" href="#">光寶科</a></li>
+			<li><a class="comp" href="#">台達電</a></li>
+			<li><a class="comp" href="#">鴻海</a></li>
+			<li><a class="comp" href="#">精英</a></li>
+			<li><a class="comp" href="#">宏碁</a></li>
+			<li><a class="comp" href="#">華碩</a></li>
+			<li><a class="comp" href="#">倫飛</a></li>
+			<li><a class="comp" href="#">昆盈</a></li>
+			<li><a class="comp" href="#">大同</a></li>
+			<li><a class="comp" href="#">技嘉</a></li>
+			<li><a class="comp" href="#">微星</a></li>
+			<li><a class="comp" href="#">浩鑫</a></li>
+			<li><a class="comp" href="#">圓剛</a></li>
+			<li><a class="comp" href="#">新巨</a></li>
+			<li><a class="comp" href="#">燦坤</a></li>
+			<li><a class="comp" href="#">新美齊</a></li>
+			<li><a class="comp" href="#">盟立</a></li>
+			<li><a class="comp" href="#">百容</a></li>
+			<li><a class="comp" href="#">歐格</a></li>
+			<li><a class="comp" href="#">威強電</a></li>
+			<li><a class="comp" href="#">建碁</a></li>
+			<li><a class="comp" href="#">喬鼎</a></li>
+			<li><a class="comp" href="#">緯創</a></li>
+			<li><a class="comp" href="#">誠研</a></li>
+			<li><a class="comp" href="#">碩天</a></li>
+			<li><a class="comp" href="#">圓展</a></li>
+			<li><a class="comp" href="#">致伸</a></li>
+			<li><a class="comp" href="#">事欣科</a></li>
+			<li><a class="comp" href="#">聚碩</a></li>
+			<li><a class="comp" href="#">亞弘電</a></li>
+			<li><a class="comp" href="#">天瀚</a></li>
+			<li><a class="comp" href="#">宏正</a></li>
+			<li><a class="comp" href="#">振樺電</a></li>
+			<li><a class="comp" href="#">偉聯</a></li>
+			<li><a class="comp" href="#">艾訊</a></li>
+			<li><a class="comp" href="#">精確</a></li>
+			<li><a class="comp" href="#">東碩</a></li>
+			<li><a class="comp" href="#">微端</a></li>
+			<li><a class="comp" href="#">英濟</a></li>
+			<li><a class="comp" href="#">西柏</a></li>
+			<li><a class="comp" href="#">駿熠電</a></li>
+			<li><a class="comp" href="#">鑫聯大投控</a></li>
+			<li><a class="comp" href="#">宜鼎</a></li>
+			<li><a class="comp" href="#">系統電</a></li>
+			<li><a class="comp" href="#">上奇</a></li>
+			<li><a class="comp" href="#">廣明</a></li>
+			<li><a class="comp" href="#">艾華</a></li>
+			<li><a class="comp" href="#">晉泰</a></li>
+			<li><a class="comp" href="#">安鈦克</a></li>
+			<li><a class="comp" href="#">邑錡</a></li>
+			<li><a class="comp" href="#">福華</a></li>
+			<li><a class="comp" href="#">大世科</a></li>
+			<li><a class="comp" href="#">欣厚-KY</a></li>
+			<li><a class="comp" href="#">寶德</a></li>
+			<li><a class="comp" href="#">百辰</a></li>
+			<li><a class="comp" href="#">鑫豪</a></li>
+			</ul>
+		  </li>
+	    </ul>
+	  </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+$(document).ready(function(){
+  $('.dropdown-menu a.comp').on("click", function(e){
+    $.redirectPost('index', {'name': jQuery(this).text()});
+  });
+});
+
+$.extend(
+{
+    redirectPost: function(location, args)
+    {
+        var form = '';
+        $.each( args, function( key, value ) {
+            form += '<input type="hidden" name="'+key+'" value="'+value+'">';
+        });
+        $('<form action="'+location+'" method="POST">'+form+'</form>').appendTo('body').submit();
+    }
+});
+</script>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-selection-multi.v1.js"></script>
+
+<div class="container">
+<h2>Company Selected: {{name}}</h2>
+<p><br>Risk score:</p>
+<p id="score" style="font-weight: bold; font-size:30px;" >N/A</p>
+<h3>About the risk score</h3>
+<p>{{basic}}</p>
+<p>The risk score is calculated by:</p>
+<ul>
+  <li>The sentiment analysis score of the news related to the company</li>
+  <li>Ratio on Financial reports</li>
+  <li>Relationship between products and other companies</li>
+  <li>Stock price movement</li>
+</ul>
+<p>The score is mapped between 0 and 10. The higher the score is, the riskier the company is.</p>
+</div>
+<div id="chart" class="container">
+<h3> Sentiment Analysis</h3>
+<p> The below bar char shows the sentiment analysis of the company on social media. We crawled data in four categories, which are:</p>
+<ul>
+  <li>Posts related to the company itself</li>
+  <li>Posts related to the company's president and chairman</li>
+  <li>Posts related to the industry that the company belongs to</li>
+  <li>Posts related to the company's product</li>
+</ul>
+<p>Within each category, we crawl the posts from two source: Google News and PTT, where PTT is the largest discussion board in Taiwan.</p>
+</div>
+<div id="chart2" class="container">
+<h3> Relation Graph</h3>
+<p> The below graph shows the product of the company and its competitors. We believe that companies affect each other if they have certain relationship.
+For example, if the company's competitor has financial problem, the company can benefit from dominating the market.</p> 
+<p>Therefore, the way we utilize this graph is that for each company, we find out its competitors, upstream companies and downstream companies.
+We then aggregate the financial score of the companies and add this feature into our model.</p>
+<svg width="960" height="500"></svg>
+</div>
+<div id="chart3" class="container">
+<h3>Stock Price</h3>
+<p> Since we are not able to get the risk score label, we utilized the stock price movement as label for our training. 
+The movement serves an indicator of how the company was performing.</p>
+<p>Below shows stock price of the company over the past year.</p>
+</div>
+<div id="chart4" class="container">
+<h3>Financial Data</h3>
+<p>There are 9 features in the financial data that we use. They stand for:</p>
+<ul>
+  <li>logZ1: Logarithm of total asset value</li>
+  <li>logZ4: Logarithm of Book-to-market value</li>
+  <li>Z4: Book-to-market value</li>
+  <li>Z5: long-term debts / total invested capital</li>
+  <li>Z7: Total debt / total capital</li>
+  <li>Z11: Operating income / received capitals</li>
+  <li>Z13: Net income before tax/ received capitals</li>
+  <li>Z15: Gross profit margin</li>
+  <li>Z17: Earnings per share (EPS)</li>
+  <li>Z22: Quick ratio</li>
+</ul>
+<p>For z5 and z7 the lower the value, the better the ranking is. For the other features, the higher the better.</p>
+<p>The below chart shows the ranking of each ratio. The ranking is compared among all companies and the higher the better.</p>
+
+</div>
+
+<script>
+document.getElementById("score").innerHTML = '{{score}}';
+if ('{{score}}' < 3.6) {
+  document.getElementById("score").style.color = "green";
+}
+else if  ('{{score}}' < 5) {
+  document.getElementById("score").style.color = 'orange';
+}
+
+else {
+   document.getElementById("score").style.color = "red";
+}
+</script>
+
+<script type="text/javascript">
+    var colors = d3.scaleOrdinal(d3.schemeCategory20);
+	var width = 900;
+    var height = 400;
+	var margin = {top: 20, right: 20, bottom: 40, left: 20};
+
+    var svg1 = d3.select("svg").attr('width', width + margin.left + margin.right)
+
+    svg1.append('defs').append('marker')
+        .attrs({'id':'arrowhead',
+            'viewBox':'-0 -5 10 10',
+            'refX':13,
+            'refY':0,
+            'orient':'auto',
+            'markerWidth':13,
+            'markerHeight':13,
+            'xoverflow':'visible'})
+        .append('svg:path')
+        .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+        .attr('fill', '#999')
+        .style('stroke','none');
+
+    var simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(100).strength(1))
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(width / 2, height / 2));
+		
+    var graph = JSON.parse('{{ graph | tojson | safe}}');
+	update(graph.links, graph.nodes);
+
+    function update(links, nodes) {
+        link = svg1.selectAll(".link")
+            .data(links)
+            .enter()
+            .append("line")
+            .attr("class", "link")
+            .attr('marker-end','url(#arrowhead)')
+
+        link.append("title")
+            .text(function (d) {return d.type;});
+
+        edgepaths = svg1.selectAll(".edgepath")
+            .data(links)
+            .enter()
+            .append('path')
+            .attrs({
+                'class': 'edgepath',
+                'fill-opacity': 0,
+                'stroke-opacity': 0,
+                'id': function (d, i) {return 'edgepath' + i}
+            })
+            .style("pointer-events", "none");
+
+        edgelabels = svg1.selectAll(".edgelabel")
+            .data(links)
+            .enter()
+            .append('text')
+            .style("pointer-events", "none")
+            .attrs({
+                'class': 'edgelabel',
+                'id': function (d, i) {return 'edgelabel' + i},
+                'font-size': 10,
+                'fill': '#aaa'
+            });
+
+        edgelabels.append('textPath')
+            .attr('xlink:href', function (d, i) {return '#edgepath' + i})
+            .style("text-anchor", "middle")
+            .style("pointer-events", "none")
+            .attr("startOffset", "50%")
+            .text(function (d) {return d.type});
+
+        node = svg1.selectAll(".node")
+            .data(nodes)
+            .enter()
+            .append("g")
+            .attr("class", "node")
+            .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    //.on("end", dragended)
+            );
+
+        node.append("circle")
+            .attr("r", function (d) {if (d.name == '{{name}}') {return 15;} else {return 7}})
+            .style("fill", function (d, i) {return colors(i);})
+
+        node.append("title")
+            .text(function (d) {return d.id;});
+
+        node.append("text")
+            .attr("dy", -3)
+            .text(function (d) {return d.name+":"+d.label;})
+			.style('font-size', function (d) {if (d.name == '{{name}}') {return '20px';} else {return '10px'}})
+			.attr("font-weight",function (d) {if (d.name == '{{name}}') {return "bold";} else {return "normal";}});
+
+        simulation
+            .nodes(nodes)
+            .on("tick", ticked);
+
+        simulation.force("link")
+            .links(links);
+    }
+
+    function ticked() {
+        link
+            .attr("x1", function (d) {return d.source.x;})
+            .attr("y1", function (d) {return d.source.y;})
+            .attr("x2", function (d) {return d.target.x;})
+            .attr("y2", function (d) {return d.target.y;});
+
+        node
+            .attr("transform", function (d) {return "translate(" + d.x + ", " + d.y + ")";});
+
+        edgepaths.attr('d', function (d) {
+            return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
+        });
+
+        edgelabels.attr('transform', function (d) {
+            if (d.target.x < d.source.x) {
+                var bbox = this.getBBox();
+
+                rx = bbox.x + bbox.width / 2;
+                ry = bbox.y + bbox.height / 2;
+                return 'rotate(180 ' + rx + ' ' + ry + ')';
+            }
+            else {
+                return 'rotate(0)';
+            }
+        });
+    }
+
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart()
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+//    function dragended(d) {
+//        if (!d3.event.active) simulation.alphaTarget(0);
+//        d.fx = undefined;
+//        d.fy = undefined;
+//    }
+
+</script>
+
+<script>
+//var width = 900;
+    //var height = 400;
+    //const margin = {top: 20, right: 20, bottom: 40, left: 40};
+    const names = ['Company News', 'Company PTT', 'CEO News', 'CEO PTT', 'Industry News', 'Industry PTT', 'Product News', 'Product PTT'];
+	var dataset = JSON.parse('{{ sent | tojson | safe}}');
+    const values = [Math.max.apply(Math, dataset.map(function(o) { return o.start+o.len; })), Math.min.apply(Math, dataset.map(function(o) { return o.start; }))];
+
+
+// Transpose the data into layers
+
+
+	var color = ["b33040", "#d25c4d", "#F9E79F", "c7e9c0", "74c476", "3182bd"];
+
+    var svg = d3.select("#chart").append('svg').attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom);
+    svg = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+    const x = d3.scaleLinear().domain(d3.extent(values)).range([0, width]);
+    const y = d3.scaleBand().domain(names).range([0, height], 0.1);
+	
+	var tooltip = d3.select("body")
+	.append("div")
+	.style("position", "absolute")
+	.style("z-index", "10")
+	.style("visibility", "hidden")
+	.text("a simple tooltip")
+	.style("font", '14px sans-serif')
+	.style("opacity", '0.9')
+	.style("background",'white')
+	.style("width", '60px')
+	.style("height", '30px')
+	.style("text-align", 'center')
+	.style("padding", '8px')
+	.style("margin-top", '-20px')
+	.style("border", '0px')		
+    .style("border-radius", '8px');	
+  
+	svg.selectAll('rect').data(dataset)
+      .enter().append('rect')
+      .attr('x', function(d) { return x(d.start);})
+      .attr('y', function(d) { return y(d.n); })
+      .attr('width', function(d) { return x(d.start+d.len)-x(d.start); })
+      .attr('height', y.bandwidth() - 5)
+	  .style("fill", function(d) { return color[d.s]; })
+	  .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+  .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+  .on("mousemove", function(d) {
+    return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px").text(d.len);});
+
+    svg.append('g')
+      .attr('class', 'x axis')
+      .attr('transform', `translate(0,${height})`)
+      .call(d3.axisBottom(x));
+    svg.append('g')
+      .attr('class', 'y axis')
+      .attr('transform', `translate(${x(0)},0)`)
+      .call(d3.axisLeft(y).tickSize(0).tickPadding(6));
+  
+  var legend = svg.selectAll(".legend")
+  .data(color)
+  .enter().append("g")
+  .attr("class", "legend")
+  .attr("transform", function(d, i) { return "translate(30," + i * 15 + ")"; });
+ 
+legend.append("rect")
+  .attr("x", width-100)
+  .attr("y", 0)
+  .attr("width", 13)
+  .attr("height", 13)
+  .style("fill", function(d, i) {return color.slice()[i];});
+ 
+legend.append("text")
+  .attr("x", width-85)
+  .attr("y", 5)
+  .attr("dy", ".50em")
+  .style("text-anchor", "start",)
+  .text(function(d, i) { 
+    switch (i) {
+      case 0: return "Highly Negative";
+      case 1: return "Mid Negative";
+      case 2: return "Low Negative";
+      case 3: return "Low Positive";
+	  case 4: return "Mid Positive";
+	  case 5: return "Highly Positive";
+
+    }
+  });
+  
+  
+</script>
+
+
+<script>
+
+// set the dimensions and margins of the graph
+//var margin = {top: 10, right: 30, bottom: 30, left: 60},
+//    width = 460 - margin.left - margin.right,
+//    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg3 = d3.select("#chart3")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+stock = JSON.parse('{{ stock | tojson | safe}}');
+
+  // Now I can use this dataset:
+
+    // Add X axis --> it is a date format
+	if (stock.length > 0) {
+    var x3 = d3.scaleTime()
+      .domain(d3.extent(stock, function(d) { return d3.timeParse("%Y/%m/%d")(d.date); }))
+      .range([ 0, width ]);
+    svg3.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x3));
+
+    // Add Y axis
+    var y3 = d3.scaleLinear()
+      .domain([0, d3.max(stock, function(d) { return +d.value; })])
+      .range([ height, 0 ]);
+    svg3.append("g")
+      .call(d3.axisLeft(y3));
+	  
+	var maxx = d3.max(stock, function(d) { return +d.value; });
+
+    // Add the line
+    svg3.append("path")
+      .datum(stock)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 2.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x3(d3.timeParse("%Y/%m/%d")(d.date)) })
+        .y(function(d) { return y3(d.value) })
+        )
+	  .on("mouseover", function(){return tooltip.style("visibility", "visible");})
+  .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+  .on("mousemove", function(d) {
+    return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px").text(Math.round((height-d3.mouse(this)[1])/height*maxx*100)/100);});
+	}
+	else {
+		svg3.append("text")
+		.attr("x", width/2)
+		.attr("y", height/2)
+		.text("No Data.")
+		.style('font-size','14px')
+	}
+
+</script>
+
+<script>
+
+var color4 = d3.scaleOrdinal(d3.schemeCategory20);
+var data = JSON.parse('{{ fin | tojson | safe}}');
+var svg4 = d3.select("#chart4").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+if (data.length > 0) {
+var x4 = d3.scaleBand()
+    .domain(d3.range(data.length))
+    .range([margin.left, width - margin.right])
+    .padding(0.4);
+
+var y4 = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.rank)]).nice()
+    .range([height - margin.bottom, margin.top]);
+
+console.log(data);
+var xAxis = g => g
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x4).tickFormat(i => data[i].x).tickSizeOuter(0));
+
+var yAxis = g => g
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y4).ticks(null, data.format))
+    .call(g => g.select(".domain").remove())
+    .call(g => g.append("text")
+        .attr("x", -margin.left)
+        .attr("y", 10)
+        .attr("fill", "currentColor")
+        .attr("text-anchor", "start")
+        .text(data.rank));
+
+svg4.append("g")
+      .call(xAxis);
+
+  svg4.append("g")
+      .call(yAxis);
+
+svg4.append("g")
+    .selectAll("rect")
+    .data(data)
+.enter().append("rect")
+.attr("fill", function(d,i) {return color4(i); })
+      .attr("x", (d, i) => x4(i))
+      .attr("y", d => y4(d.rank))
+      .attr("height", d => y4(0) - y4(d.rank))
+      .attr("width", x4.bandwidth()).on("mouseover", function(){return tooltip.style("visibility", "visible");})
+  .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+  .on("mousemove", function(d) {
+    return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px").text(d.value);
+	});
+}
+else {
+svg4.append("text")
+		.attr("x", width/2)
+		.attr("y", height/2)
+		.text("No Data.")
+		.style('font-size','14px')
+}
+</script>
+</body>
+</html>
